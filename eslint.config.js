@@ -25,6 +25,13 @@ export default [
       },
     },
     rules: {
+        "prettier/prettier": [
+        "error",
+        {
+          plugins: ["prettier-plugin-tailwindcss"],
+        },
+      ],
+
       "react-hooks/rules-of-hooks": "error", // Garante que os hooks sejam usados corretamente
       "react-hooks/exhaustive-deps": "warn", // Garante que dependências em useEffect sejam declaradas
       "react/react-in-jsx-scope": "off",

@@ -20,6 +20,9 @@ export default {
         'my-gray-100': '#F2F2F2',
         'danger': '#E25858',
       },
+      fontFamily: {
+        inter: ['Inter', 'serif'],
+      },
     },
   },
   plugins: [],
