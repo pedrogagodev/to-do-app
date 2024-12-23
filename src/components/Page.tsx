@@ -1,4 +1,5 @@
 import { Empty } from './Elements/Empty'
+import { Task } from './Elements/Task'
 import Plus from '../assets/plus.svg'
 
 
@@ -21,7 +22,7 @@ export function Page() {
                         <span className="text-white bg-my-gray-400 px-2 rounded-full">0</span>
                     </p>
                 </div>
-              <Empty /> 
+              <Task /> 
             </div>
         </div>
     )
