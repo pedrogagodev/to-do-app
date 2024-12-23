@@ -23,6 +23,9 @@ export default {
       fontFamily: {
         inter: ['Inter', 'serif'],
       },
+      width: {
+        'content-w': '46rem' ,
+      },
     },
   },
   plugins: [],
