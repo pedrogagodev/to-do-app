@@ -26,10 +26,6 @@ export function Page() {
         setTasks((state) => [...state, newTask])
         setInputValue('')
       }
-
-      console.log(tasks)
-
-      
     
     return (
         <div className="bg-my-gray-600 w-full flex flex-col items-center grow font-inter">
