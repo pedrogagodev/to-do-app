@@ -4,9 +4,14 @@ import { ITask } from '../Page'
 
 interface Props {
     data: ITask
+    removeTask: (id: number) => void
 }
 
-export function Task({ data }: Props) {
+export function Task({ data, removeTask }: Props) {
+
+    function handleRemove() {
+        removeTask(data.id)
+    }
 
     return (
         <div className="flex rounded-lg w-content-w bg-my-gray-400 gap-3 p-4">
@@ -15,7 +20,7 @@ export function Task({ data }: Props) {
                 <span className='pl-1 pt-3'><Check size={18} color='white'/></span>
                 <span className='text-my-gray-100 '>{data.content}</span>
             </label>
-           <img src={Trash} alt="" className='h-4 w-4 mt-4'/>
+           <img src={Trash} onClick={handleRemove} alt=""className='h-4 w-4 mt-4'/>
         </div>
     )
 }   

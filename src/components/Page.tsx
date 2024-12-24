@@ -11,10 +11,10 @@ export interface ITask {
   
 
 export function Page() {
-     const [tasks, setTasks] = useState<ITask[]>([])
-      const [inputValue, setInputValue] = useState('')
+    const [tasks, setTasks] = useState<ITask[]>([])
+    const [inputValue, setInputValue] = useState('')
     
-      function handleAddTask() {
+    function handleAddTask() {
         if (!inputValue) return
     
         const newTask: ITask = {
@@ -26,7 +26,13 @@ export function Page() {
         setTasks((state) => [...state, newTask])
         setInputValue('')
       }
-    
+
+    function handleRemoveTask(id: number) {
+        const filteredTasks = tasks.filter((task) => task.id !== id)
+
+        setTasks(filteredTasks)
+    }
+
     return (
         <div className="bg-my-gray-600 w-full flex flex-col items-center grow font-inter">
             <div className="flex gap-2 h-14  w-content-w relative z-10 -top-7">
@@ -55,7 +61,7 @@ export function Page() {
                 </div>
                 <div>
                     {tasks.map((task) => {
-                       return <Task key={task.id} data={task}/>
+                       return <Task key={task.id} data={task} removeTask={handleRemoveTask}/>
                     })}
                 </div>
             </div>
